@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href=".../static/css/style.css"/>
+    </head>
+    <body>
+        <h1>My First Webpage</h1>
+        <!-- <p>Hello, {{users.0.name}}!</p>
+        <p>Hello, {{users[1]['name']}}!</p> -->
+        <a href= "{{ url_for('login') }}">Click here to login!</a>
+
+        {% block content %}
+            {% for user in users %}
+                <p>Hello, {{user.name}}!</p>
+            {% else %}
+                <p>No data!</p>
+            {% endfor %}
+        {% endblock %}
+        
+    </body>
+</html>
