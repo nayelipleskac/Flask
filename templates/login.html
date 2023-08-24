@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel = "stylesheet" type = "text/css" href=".../static/css/style.css"/>
+        <link rel = "stylesheet" type = "text/css" href="../../static/css/style2.css"/>
     </head>
     <div class = 'login'>
         <body>
-            <a href="https://www.youngwonks.com/">Click to go to Youngwonks website!</a>
+            <form >
+                <h1>Login </h1>
+                <div class="email" >
+                    <label for = 'email'>Email Address</label>
+                    <input id = 'email' type = 'email' name = 'email'>
 
-            <h1>Login Page</h1>
-            <p>Welcome to the website</p>
-            <br>
-            <a href= "{{ url_for('home') }}">Click here to go home!</a>
-            <!-- <button>lfjkljklsljlsdfk</button> -->
-            <form action = "{{ url_for('login') }}" method = 'post'>
-                <span>Enter your username: </span>
-                <input type = 'text' id = 'user' name = 'user'>
-                <br>
-                <label>Enter your password: </label>
-                <input type = 'text' id = 'password' name = 'password'>
-                <br>
-                <label>Forgot your password?</label>
-                <br>
-                <input type = 'submit' value = 'Submit!'>
-              
+                </div>
+                <div class="password" >
+                    <label for = 'password '>Password</label>
+                    <input id = 'password' type = 'password' name = 'password'>
+                </div>
+                <div class = 'checkbox'>
+                    <input type = 'checkbox' id = 'remember-me'>
+                    <label for = 'remember-me'>Remember me</label>
+
+                </div>
+                 
+            <button>Sign in</button>
+            
+
+
+            <p>Don't have an account yet? <span>Sign up here!</span> </p>
+ 
 
             </form>
+                      
+              
+
+        
            
         </body>
     </div>
