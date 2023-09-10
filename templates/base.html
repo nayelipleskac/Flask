@@ -29,11 +29,21 @@
                     <h1>New This Summer!</h1>
                     <p>Get 5 free if you order before September 1st! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo erat odio, in hendrerit odio feugiat ac. Proin id vulputate urna. Mauris in tristique eros, nec maximus lectus. Aliquam vehicula ante mi, non elementum nulla tincidunt eu. Sed tempus eros non arcu porta, imperdiet ullamcorper quam facilisis. Integer fringilla lorem in tellus eleifend, feugiat semper turpis ullamcorper. Phasellus vitae risus id ligula semper placerat a quis justo. In sagittis ultrices efficitur. Praesent ac arcu placerat, pharetra massa id, efficitur diam.
                     Aliquam sit amet enim ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer rutrum velit quis libero viverra, et tempor purus pellentesque. Sed id ultricies arcu. Suspendisse nulla odio, faucibus vitae est ac, pellentesque gravida diam. Nunc interdum nec diam quis porta.</p>
-                    <button>Order Now</button>
+                    <form action = '/orders' method = 'GET'>
+                        <button type = 'submit'>Order Now</button>
+                    </form>
+                    <ul class = entries>
+                        {% for entry in entries %}
+                            <li><h2>{{ entry.title }}</h2>{{ entry.text }}
+                        {% else %}
+                            <li><em>Make the first post!<em>
+                        {% endfor %}
+                    </ul>
 
                 </div>
 
             </div>
+
             
         </body>
 

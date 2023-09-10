@@ -5,7 +5,8 @@
     </head>
     <div class = 'login'>
         <body>
-            <form action = '/' method = 'GET'>
+            <!-- action = '/' method = 'post'-->
+            <form action = "{{url_for('add_entry') }}" method = post> 
                 <h1>Login </h1>
                 <div class="email" >
                     <label for = 'email'>Email Address</label>
@@ -19,19 +20,12 @@
                 <div class = 'checkbox'>
                     <input type = 'checkbox' id = 'remember-me'>
                     <label for = 'remember-me'>Remember me</label>
-
                 </div>
                  
-            <button type = 'submit' >Sign in</button>
+            <button type = 'submit' value = Share>Sign in</button>
             <p>Don't have an account yet? <span>Sign up here!</span> </p>
- 
 
             </form>
-                      
-              
-
-        
-           
         </body>
     </div>
 </html>

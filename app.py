@@ -9,14 +9,30 @@ users = Database.get_users()
 @app.before_request #name not method, before_first_request deprecated
 def initialize_database():
     Database.initialize()
-    # if not app.config['_got_first_request']:
-    #     print('hello')
-    #     app.config['_got_first_request']= True
-    # print('world')
-#could call static funcs to retrieve/insert 
+# @app.route('/') #default route
+# def show_entries():
+#     entries = Database.get_records()
+#     return render_template('base.html', entries = entries)
+
+@app.route('/add')
+def add_entry():
+    doc = {
+        'title': request.form.get('title'),
+        'text': request.form.get('text')
+    }
+    Database.insert_record(doc)
+    return redirect(url_for('show_entries'))
+@app.route('/delete')
+def delete_all():
+    Database.delete_all()
+    return redirect(url_for('show_entries'))
+  
 @app.route('/')
 def home():
     return render_template('base.html', users =users)
+def show_entries():
+    entries = Database.get_records()
+    return render_template('base.html', entries = entries)
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     if request.method == 'GET':
@@ -37,7 +53,8 @@ def login():
     
 @app.route('/orders', methods =['GET', 'POST'])
 def orders():
-    return render_template('orders.html')
+    if request.method == 'GET':
+        return render_template('orders.html')
     
     #after user logs in 
     # print('Redirecting ... ')

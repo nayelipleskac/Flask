@@ -22,5 +22,10 @@ class Database:
     def get_users():
         print('list of users: ')
         print(Database.users) #printing users list
+    def get_records():
+        records = [doc for doc in Database.DB.users.find({})]
+        return records
       
+    def delete_all():
+        Database.DB.users.drop()
         

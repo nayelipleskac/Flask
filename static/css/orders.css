@@ -34,3 +34,42 @@ body {
     color: black;
     text-align: center;
 }
+
+.menu-grid {
+    width: 70vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+}
+
+.menu-item {
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+    text-align: center;
+    border: 2px solid #ccc;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item:hover {
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in;
+    cursor: pointer;
+
+}
+
+.menu-item img {
+    background-image: url('item1.jpg');
+    max-width: 100%;
+    height: auto;
+}
+
+.menu-item h2 {
+    margin: 10px 0;
+}
+
+.menu-item p {
+    font-weight: bold;
+    color: #fca5a5;
+}
