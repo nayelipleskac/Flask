@@ -3,12 +3,9 @@ from flask import render_template, request
 from flask import redirect, url_for
 from database import Database
 app = Flask(__name__)
-users = [
-    {'name': 'Anne'},
-    {'name': 'Bob'},
-    {'name': 'Nayeli'}
-    # {'name': user}
-]
+#get users from database.py
+users = Database.get_users()
+
 @app.before_request #name not method, before_first_request deprecated
 def initialize_database():
     Database.initialize()
@@ -16,6 +13,7 @@ def initialize_database():
     #     print('hello')
     #     app.config['_got_first_request']= True
     # print('world')
+#could call static funcs to retrieve/insert 
 @app.route('/')
 def home():
     return render_template('base.html', users =users)
@@ -28,15 +26,19 @@ def login():
     #post request- form data, similar to a dictionary, if request.form.get('key') is used 
     #look for key in the form from POST request
     elif request.method == 'POST':
-        #redirects to home page if login is successful
+    #redirects to home page if login is successful
         user = request.form.get('user')
         print(user)
-        return redirect(url_for('home', user = user))
-    
+        
+        name=Database.insert_record(user)
+        print(name)
 
+        return redirect(url_for('home', user = name))
     
-    # user = request.args.get('user')
-
+@app.route('/orders', methods =['GET', 'POST'])
+def orders():
+    return render_template('orders.html')
+    
     #after user logs in 
     # print('Redirecting ... ')
     # return redirect(url_for('login'))

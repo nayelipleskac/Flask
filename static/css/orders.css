@@ -1,0 +1,36 @@
+body {
+    margin: 0
+}
+
+.orders {
+    display: flex;
+    flex-direction: column;
+}
+
+.topnav {
+    font-family: 'Lilita One';
+    font-weight: bold;  
+    height: 100px;
+    background-color: #fafafa;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 4%
+}
+.topnav .logo {
+    display: flex;
+    align-items: center;
+}
+
+.topnav .info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 14px;
+}
+
+.topnav p {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+}

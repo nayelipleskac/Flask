@@ -7,19 +7,20 @@ class Database:
     {'name': 'Bob'},
     {'name': 'Nayeli'}]
 
+
     @staticmethod
     def initialize():
-        client = pymongo.MongoClient('mongob://127.0.0.1:27017')
+        client = pymongo.MongoClient('mongodb://127.0.0.1:27017/')
         Database.DB = client.mydb
     
     @staticmethod
     def insert_record(doc):
-        Database.DB.users.insert_one(doc)
-    @staticmethod 
+        Database.users.insert_one(doc)
     #static list of users
     #waiting to be called from app.py
+    @staticmethod 
     def get_users():
         print('list of users: ')
-        print(users)
+        print(Database.users) #printing users list
       
         
