@@ -9,10 +9,7 @@ users = Database.get_users()
 @app.before_request #name not method, before_first_request deprecated
 def initialize_database():
     Database.initialize()
-# @app.route('/') #default route
-# def show_entries():
-#     entries = Database.get_records()
-#     return render_template('base.html', entries = entries)
+
 
 @app.route('/add')
 def add_entry():
@@ -30,6 +27,7 @@ def delete_all():
 @app.route('/')
 def home():
     return render_template('base.html', users =users)
+@app.route('/')
 def show_entries():
     entries = Database.get_records()
     return render_template('base.html', entries = entries)
@@ -55,6 +53,11 @@ def login():
 def orders():
     if request.method == 'GET':
         return render_template('orders.html')
+    
+@app.route('/account', methods = ['GET', 'POST'])
+def account():
+    if request.method == 'GET':
+        return render_template('account.html')
     
     #after user logs in 
     # print('Redirecting ... ')

@@ -6,6 +6,7 @@ class Database:
     {'name': 'Anne'},
     {'name': 'Bob'},
     {'name': 'Nayeli'}]
+    
 
 
     @staticmethod
@@ -16,6 +17,8 @@ class Database:
     @staticmethod
     def insert_record(doc):
         Database.users.insert_one(doc)
+    
+
     #static list of users
     #waiting to be called from app.py
     @staticmethod 

@@ -15,10 +15,10 @@
                 <h1>Ice Creameria</h1>
             </div>
             <div class = 'info'>
-                <p>Home</p>
-                <p>Order</p>
-                <p>About Us</p>
-                <p>Account</p>
+                <p><a href = '/'>Home</a></p>
+                <p><a href = '/orders'>Order</a></p>
+                <p><a href = '/orders'>About Us</a></p>
+                <p><a href = '/account'>Account</a></p>
             </div>
             
 
@@ -32,14 +32,7 @@
                     <form action = '/orders' method = 'GET'>
                         <button type = 'submit'>Order Now</button>
                     </form>
-                    <ul class = entries>
-                        {% for entry in entries %}
-                            <li><h2>{{ entry.title }}</h2>{{ entry.text }}
-                        {% else %}
-                            <li><em>Make the first post!<em>
-                        {% endfor %}
-                    </ul>
-
+                   
                 </div>
 
             </div>
